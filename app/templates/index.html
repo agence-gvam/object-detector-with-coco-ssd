@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}"
+      href="{{ url_for('static', filename='style/style.css') }}"
     />
     <title>Object Detector With Coco SSD</title>
   </head>
@@ -13,7 +13,17 @@
     <section>
       <h1>Object Detector With Coco SSD</h1>
       <div id="img-wrapper">
-        <img id="image" src="../static/blank.png" />
+        <div id="drop-info" class="hide-element">Drop your image here</div>
+        <img
+          id="image"
+          src="{{ url_for('static', filename='img/blank.png') }}"
+        />
+        <button id="reload-btn" class="hide-element">
+          <img
+            src="{{ url_for('static', filename='img/reload.svg') }}"
+            alt=""
+          />
+        </button>
       </div>
       <form id="url-form">
         <input type="text" name="" id="url-input" placeholder="Image url" />

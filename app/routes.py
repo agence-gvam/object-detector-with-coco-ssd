@@ -11,14 +11,10 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/detect-objects", methods=["GET"])
-def get_image():
+@app.route("/detect-objects-from-url", methods=["GET"])
+def detect_objects_from_url():
     image_url = request.args.get("image_url")
-
     image_id = str(uuid.uuid4())
-    # image_name = image_url.split("/").pop(-1)
-    # image_name = image_name + "-" + id
-
     response = requests.get(image_url)
 
     if response.status_code == 200:
@@ -27,9 +23,20 @@ def get_image():
 
         image_path = os.path.join("tmp", image_id)
         all_objects = detect_objects(image_path)
+        os.remove(image_path)
 
     else:
         print("Error when downloading the image.")
 
-    # print(all_objects)
+    return jsonify(all_objects)
+
+
+@app.route("/detect-objects-from-file", methods=["POST"])
+def detect_objects_from_file():
+    image_id = str(uuid.uuid4())
+    image = request.files["file"]
+    image_path = os.path.join("tmp", image_id)
+    image.save(image_path)
+    all_objects = detect_objects(image_path)
+    os.remove(image_path)
     return jsonify(all_objects)
