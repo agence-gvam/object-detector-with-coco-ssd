@@ -59,8 +59,19 @@ or
 pip install virtualenv
 ```
 
+### Clone and open the repo
+
+Open your terminal, go to an appropriate folder & clone the repo using the command bellow:
+```
+git clone https://github.com/agence-gvam/object-detector-with-coco-ssd.git
+```
+Then, go into the project using this command:
+```
+cd object-detector-with-coco-ssd
+```
+
 ### Create a virtual environment
-Open your terminal. Go to the project folder and run this command:
+Run this command in your treminal:
 ```
 python -m venv <folder_name>
 ```
@@ -68,23 +79,31 @@ or
 ```
 python3 -m venv <folder_name>
 ```
-<folder_name> is the name of the folder that will contains the virtual environment in your project. Replace it by the name you want (I used to use "venv" as <folder_name>).
+<folder_name> is the name of the folder that will contains the virtual environment in your project. Replace it by the name you want (I used to use venv as <folder_name>).
 
-
-
-
-
-### Clone and open the repo
-
-Fist of all, open your terminal, go to an appropriate folder  & clone the repo using the command bellow:
+### Activate the virtual environment
+If you are on a Mac/Linux computer, run this command in the terminal to activate the virtual environment:
 ```
-https://github.com/agence-gvam/object-detector-with-coco-ssd.git
-```
-Then, go into the project using this command:
-```
-cd object-detector-with-coco-ssd
+source <venv_folder_name>/bin/activate
 ```
 
-### Install virtualenv
-Run the command bellow in your 
+If you are on a Windows computer, run this command:
+```
+venv\Scripts\activate
+```
+
+
+
+
+### Pip version
+Remind that this project has been created using Pip 24.0. I cannot guarantee it will work with another version. If you want to check you Pip version, run htis command:
+```
+pip --version
+```
+if the version is different from 24.0, you can install the 24.0 version using this command:
+```
+python get-pip.py pip==20.3.4
+```
+
+
 
