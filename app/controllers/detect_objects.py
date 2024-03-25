@@ -10,7 +10,7 @@ def load_model():
     global model
     print("Loading model...")
     model = hub.load(os.path.join("model", "saved_model"))
-    print("Model loaded...")
+    print("Model successfully loaded!")
 
 
 load_model()
