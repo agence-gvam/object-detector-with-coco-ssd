@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Object Detector With Coco SSD</title>
+  </head>
+  <body>
+    <section>
+      <h1>Object Detector With Coco SSD</h1>
+      <div id="img-wrapper">
+        <img id="image" src="../static/blank.png" />
+      </div>
+      <form id="url-form">
+        <input type="text" name="" id="url-input" placeholder="Image url" />
+        <input type="submit" value="Load and detect" />
+      </form>
+    </section>
+    <script
+      type="module"
+      src="{{ url_for('static', filename='js/script.js') }}"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+/venv
+/images/*
+.vscode
+/__pycache__
+/tmp
+/model
+delete_cache_command.txt
